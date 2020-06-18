@@ -50,6 +50,15 @@ let inViewport = function(elemnt) {
 
 // build the nav
 
+function buildNav() {
+    for (let item of secs) {
+        let li = document.createElement("li");
+        li.className = "menu__item";
+        li.innerHTML = `<a href="#${item.id}" class="menu__link">${item.dataset.nav}</a>`;
+        navm.appendChild(li);
+    }
+}
+buildNav();
 
 // Add class 'active' to section when near top of viewport
 
