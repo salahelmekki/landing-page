@@ -29,17 +29,7 @@ const nav_list=document.querySelector('ul');
  * Start Helper Functions
  * 
 */
-let inViewport = function(elemnt) {
-	let bounding = elemnt.getBoundingClientRect();
-	return (
-		 bounding.top <= 50 &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      bounding.right <=
-        (window.innerWidth || document.documentElement.clientWidth)
-    );
-		
-};
+
 
 
 /**
@@ -50,37 +40,10 @@ let inViewport = function(elemnt) {
 
 // build the nav
 
-function buildNav() {
-    for (let item of secs) {
-        let li = document.createElement("li");
-        li.className = "menu__item";
-        li.innerHTML = `<a href="#${item.id}" class="menu__link">${item.dataset.nav}</a>`;
-        navm.appendChild(li);
-    }
-}
-buildNav();
+
 // Add class 'active' to section when near top of viewport
 
-function isActive() {
-	
-		for (let item of secs) {
-			
-			window.addEventListener('scroll', function (e) {
-				e.preventDefault();
-				if (inViewport(item)) {
-					item.classList.add('your-active-class');
-					
-				}else {
-					item.classList.remove('your-active-class');
-					
-				}
-			});
-			{once: true}
-		};
-}
-
-isActive()		
-					 
+	 
 			
 // this helper function is used to check if "section" is in the viewport
 
