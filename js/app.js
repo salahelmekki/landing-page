@@ -62,7 +62,25 @@ buildNav();
 
 // Add class 'active' to section when near top of viewport
 
-	 
+function isActive() {
+	
+		for (let item of secs) {
+			
+			window.addEventListener('scroll', function (e) {
+				e.preventDefault();
+				if (inViewport(item)) {
+					item.classList.add('your-active-class');
+					
+				}else {
+					item.classList.remove('your-active-class');
+					
+				}
+			});
+			{once: true}
+		};
+    }
+
+isActive()	
 			
 // this helper function is used to check if "section" is in the viewport
 
