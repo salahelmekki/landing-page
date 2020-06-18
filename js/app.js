@@ -29,7 +29,17 @@ const nav_list=document.querySelector('ul');
  * Start Helper Functions
  * 
 */
-
+let inViewport = function(elemnt) {
+	let bounding = elemnt.getBoundingClientRect();
+	return (
+		 bounding.top <= 50 &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <=
+        (window.innerWidth || document.documentElement.clientWidth)
+    );
+		
+};
 
 
 /**
