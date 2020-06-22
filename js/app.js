@@ -86,8 +86,23 @@ isActive()
 
 
 // Scroll to anchor ID using scrollTO event
+ function scrollToSection(){
+  //Select links
+  let navLinks = document.querySelectorAll('a'); 
+  
+  //Loop over links
+  navLinks.forEach(function(navLink){ 
+    //Add listener on each link
+    navLink.addEventListener('click', function(e) { 
+      
+      e.preventDefault();
+	  document.querySelector(this.getAttribute("href")).scrollIntoView({behavior:'smooth'})
+      
+  });
+});
+ }
 
-
+scrollToSection();
 /**
  * End Main Functions
  * Begin Events
